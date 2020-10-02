@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+service Counter {
+    // Increments the global counter by a certain amount
+    rpc Increment (IncrementRequest) returns (IncrementReply) {
+    }
+
+    // Get latest counter value
+    rpc GetCounter (GetCounterRequest) returns (GetCounterReply) {
+    }
+}
+
+// Requests and responses format for incrementing counter
+message IncrementRequest {
+    int32 value = 1;
+}
+
+message IncrementReply {
+    int32 value = 1;
+}
+
+// Requests and responses format for getting latest counter value
+message GetCounterRequest {
+}
+
+message GetCounterReply {
+    int32 value = 1;
+}
