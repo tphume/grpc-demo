@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Frontend web demo",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack client.js"
+  },
   "keywords": [],
   "author": "tphume",
   "license": "ISC",
