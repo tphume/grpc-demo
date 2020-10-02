@@ -139,3 +139,6 @@ cython_debug/
 
 #jetbrains files
 .idea/
+
+# node modules
+web/node_modules/
