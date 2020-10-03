@@ -1,0 +1,22 @@
+version: "3.4"
+services:
+  server:
+    container_name: counter_server
+    image: grpc-demo/counter_server
+    build:
+      context: ./python
+    ports:
+      - "50051:50051"
+    networks:
+      - grpc-demo
+  envoy:
+    container_name: demo_envoy
+    image: grpc-demo/demo_envoy
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - grpc-demo
+
+networks:
+  grpc-demo:
