@@ -19,27 +19,28 @@ function init() {
 
 // Increment counter value
 function incCounter() {
-  var request = IncrementRequest();
-  request.value = 1;
+  var request = new IncrementRequest();
+  request.setValue(1);
 
   client.increment(request, {}, (err, response) => {
-    updateCounter(response.value)
+    updateCounter(response.getValue())
   });
 }
 
 // Fetch counter value
 function fetchCounter() {
-  var request = GetCounterRequest();
+  var request = new GetCounterRequest();
 
   client.getCounter(request, {}, (err, response) => {
-    updateCounter(response.value)
+    updateCounter(response.getValue())
   });
 }
 
 // Helper function that will update the display of counter
 function updateCounter(value) {
+  console.log(value);
   display = document.getElementById("display");
-  display.value = `Current counter value is: ${value}`;
+  display.innerHTML = `Current counter value is: ${value}`;
 }
 
 // Wait for HTML to load
